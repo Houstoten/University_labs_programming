@@ -1,4 +1,4 @@
-package lab2.com.houston.Car;
+package com.houston.Car;
 
 import java.math.BigDecimal;
 

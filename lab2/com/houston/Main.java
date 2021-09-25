@@ -1,4 +1,4 @@
-package lab2.com.houston;
+package com.houston;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
-import lab2.com.houston.Car.Car;
+import com.houston.Car.Car;
 
 public class Main {
 
