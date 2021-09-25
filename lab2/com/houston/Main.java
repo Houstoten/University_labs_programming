@@ -9,20 +9,41 @@ import java.util.function.Predicate;
 
 import com.houston.Car.Car;
 
+/**
+ * Main class
+ */
 public class Main {
 
+    /**
+     * Models to be used to generate car
+     */
     public static String[] models = { "Toyota Camry", "Lexus NC", "Honda Civic", "Volkswagen Polo" };
 
+    /**
+     * Generated cars field
+     */
     private Car[] cars;
 
+    /**
+     * get method for cars field
+     * @return generated cars
+     */
     public Car[] getCars() {
         return cars;
     }
 
+    /**
+     * set method for cars field
+     * @param cars initial cars to be set
+     */
     public void setCars(Car[] cars) {
         this.cars = cars;
     }
 
+    /**
+     * Main class entry point
+     * @param args cli arguments
+     */
     public static void main(String[] args) {
         Main main = new Main();
         
@@ -46,6 +67,11 @@ public class Main {
 
     }
 
+    /**
+     * Car array generator method
+     * @param N how many cars to be generated
+     * @return array of generated cars
+     */
     public static Car[] createCars(int N) {
         Car[] res = new Car[N];
 
@@ -62,14 +88,30 @@ public class Main {
         return res;
     }
 
+    /**
+     * Function to get cars filtered by model
+     * @param model initial model to be filtered by
+     * @return filtered cars array
+     */
     public Car[] getCarsByModel(String model) {
         return filterCarsGeneric(car -> model.equals(car.getModel()));
     }
 
+    /**
+     * Function to get cars over specified age 
+     * @param years specified age
+     * @return filtered by specified age car array
+     */
     public Car[] getCarsOverSomeAge(int years) {
         return filterCarsGeneric(car -> LocalDateTime.now().getYear() - car.getYear() >= years);
     }
 
+    /**
+     * Function to get cars of some year and over some price
+     * @param year initial year to be filtered by
+     * @param price initial price to be filtered by
+     * @return filtered car array
+     */
     public Car[] getCarsOfYearBiggerThanPrice(int year, BigDecimal price) {
 
         Predicate<Car> predicate = car -> car.getYear() == year;
@@ -79,6 +121,11 @@ public class Main {
         return filterCarsGeneric(predicate);
     }
 
+    /**
+     * Generic function to provide high-order API over car array filtering
+     * @param predicate is what to filter by
+     * @return car array which is filtered by predicate
+     */
     public Car[] filterCarsGeneric(Predicate<Car> predicate) {
         return Arrays.stream(cars).filter(predicate).toArray(Car[]::new);
     }
