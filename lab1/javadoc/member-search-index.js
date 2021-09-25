@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.houston","c":"LucasSolver","l":"checkIfCube"},{"p":"com.houston","c":"LucasSolver","l":"LucasSolver(Predicate<Long>)","url":"%3Cinit%3E(java.util.function.Predicate)"},{"p":"com.houston","c":"LucasSolver","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"com.houston","c":"LucasSolver","l":"solve(int)"}]
