@@ -47,7 +47,7 @@ public class Main {
 
         long[] res = solver.solve(N);
 
-        System.out.println("\nFound cubes: [ "
+        System.out.println("\nFound numbers fit predicate: [ "
                 + Arrays.stream(res).mapToObj(Long::toString).collect(Collectors.joining(", ")) + " ]");
     }
 }
